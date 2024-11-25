@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Structure</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+    }
+    .frame {
+      border: none;
+    }
+    #left-frame {
+      width: 30%;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+    #center-frame {
+      width: 35%;
+      padding: 20px;
+      background-color: #e0e0e0;
+    }
+    #right-frame {
+      width: 35%;
+      padding: 20px;
+      background-color: #d0d0d0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Left Frame: Displays company name as heading -->
+  <iframe id="left-frame" class="frame" srcdoc="
+    <h1>Company Name: XYZ Corp</h1>
+  "></iframe>
+
+  <!-- Center Frame: Lists department names with hyperlinks -->
+  <iframe id="center-frame" class="frame" srcdoc="
+    <h2>Departments</h2>
+    <ul>
+      <li><a href='#' onclick='window.parent.document.getElementById(&quot;right-frame&quot;).srcdoc=&quot;<h2>HR Department</h2><p>The HR department handles employee relations, benefits, and recruitment.</p>&quot;'>HR Department</a></li>
+      <li><a href='#' onclick='window.parent.document.getElementById(&quot;right-frame&quot;).srcdoc=&quot;<h2>IT Department</h2><p>The IT department is responsible for maintaining the company’s technology infrastructure.</p>&quot;'>IT Department</a></li>
+      <li><a href='#' onclick='window.parent.document.getElementById(&quot;right-frame&quot;).srcdoc=&quot;<h2>Marketing Department</h2><p>The Marketing department is in charge of branding, advertising, and promotions.</p>&quot;'>Marketing Department</a></li>
+      <li><a href='#' onclick='window.parent.document.getElementById(&quot;right-frame&quot;).srcdoc=&quot;<h2>Sales Department</h2><p>The Sales department manages client relations and drives revenue generation.</p>&quot;'>Sales Department</a></li>
+    </ul>
+  "></iframe>
+
+  <!-- Right Frame: Displays department details upon clicking a hyperlink -->
+  <iframe id="right-frame" class="frame" srcdoc="<h2>Welcome to XYZ Corp</h2><p>Select a department to view details.</p>"></iframe>
+
+</body>
+</html>

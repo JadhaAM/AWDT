@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition Effects Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #333;
+      transition: color 0.5s ease, transform 0.5s ease;
+    }
+
+    h1:hover {
+      color: #3498db;
+      transform: scale(1.2);
+    }
+
+    .button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .button:hover {
+      background-color: #27ae60;
+      transform: translateY(-5px);
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: #e74c3c;
+      margin-top: 30px;
+      transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease;
+    }
+
+    .box:hover {
+      background-color: #c0392b;
+      transform: rotate(45deg);
+      opacity: 0.8;
+    }
+
+    .delayed-button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #9b59b6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 1s ease 0.5s;
+    }
+
+    .delayed-button:hover {
+      background-color: #8e44ad;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hover Over Me</h1>
+    <button class="button">Hover Over Me!</button>
+    <div class="box"></div>
+    <button class="delayed-button">Delayed Hover</button>
+  </div>
+</body>
+</html>

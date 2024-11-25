@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Text with Hover Effect</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #282c34;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .text-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .text-container h1 {
+      font-size: 4rem;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s, text-shadow 0.3s;
+    }
+
+    .text-container h1::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #000;
+      z-index: -1;
+      text-shadow: 
+        -2px -2px 0 #ffcc00, 
+        -4px -4px 0 #ff9900, 
+        -6px -6px 0 #ff6600;
+      transform: translate(2px, 2px);
+    }
+
+    .text-container h1:hover {
+      transform: translateY(-5px);
+      text-shadow: 
+        2px 2px 5px rgba(255, 255, 255, 0.3), 
+        -2px -2px 5px rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="text-container">
+    <h1 data-text="Hover Me">Hover Me</h1>
+  </div>
+</body>
+</html>
